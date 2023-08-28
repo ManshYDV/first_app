@@ -1,3 +1,4 @@
+import 'package:first_app/Screen/Utils/routes.dart';
 import 'package:first_app/Screen/home_page.dart';
 import 'package:first_app/Screen/login_page.dart';
 import 'package:flutter/material.dart';
@@ -19,10 +20,11 @@ class MyApp extends StatelessWidget {
           //primaryTextTheme: GoogleFonts.latoTextTheme(),
           primarySwatch: Colors.blueGrey),
       darkTheme: ThemeData(brightness: Brightness.dark),
-      initialRoute: "/Login",
+      initialRoute: "/",
       routes: {
-        "/Login": (context) => const LoginPage(),
-        "/home": (context) => const HomePage()
+        "/": (context) => const LoginPage(),
+        MyRoutes.homeRoute: (context) => const HomePage(),
+        MyRoutes.loginRoute: (context) => const LoginPage()
       },
     );
   }
